@@ -12,7 +12,33 @@
     "meaning": "Not showing or feeling nervousness, anger, or other strong emotions.",
     "antonyms": ["Excited", "Anxious"],
     "exampleSentences": ["The teacher spoke in a calm voice."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000003",
+    "word": "Gentle",
+    "meaning": "Kind and careful not to hurt or upset anyone or anything.",
+    "antonyms": ["Rough", "Harsh"],
+    "exampleSentences": ["The gentle breeze felt nice on my face."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000004",
+    "word": "Happy",
+    "meaning": "Feeling or showing pleasure or contentment.",
+    "antonyms": ["Sad", "Unhappy"],
+    "exampleSentences": ["She felt happy when she saw her friends."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000005",
+    "word": "Quick",
+    "meaning": "Moving fast or doing something in a short time.",
+    "antonyms": ["Slow", "Sluggish"],
+    "exampleSentences": ["The quick rabbit ran across the field."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000006",
+    "word": "Brave",
+    "meaning": "Ready to face and endure danger or pain.",
+    "antonyms": ["Scared", "Cowardly"],
+    "exampleSentences": ["The brave firefighter rescued the cat from the tree."]
   }
 ]
-
-

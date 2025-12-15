@@ -12,7 +12,33 @@
     "meaning": "Happening in a short time or at a great rate.",
     "antonyms": ["Slow", "Gradual"],
     "exampleSentences": ["There was a rapid change in the weather."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000013",
+    "word": "Ancient",
+    "meaning": "Belonging to the very distant past.",
+    "antonyms": ["Modern", "New"],
+    "exampleSentences": ["They visited an ancient castle on the hill."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000014",
+    "word": "Enormous",
+    "meaning": "Very large in size, quantity, or extent.",
+    "antonyms": ["Tiny", "Small"],
+    "exampleSentences": ["The enormous elephant walked through the jungle."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000015",
+    "word": "Fierce",
+    "meaning": "Having or displaying a violent or aggressive nature.",
+    "antonyms": ["Gentle", "Mild"],
+    "exampleSentences": ["The fierce lion protected its cubs."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000016",
+    "word": "Gleaming",
+    "meaning": "Shining brightly, especially with reflected light.",
+    "antonyms": ["Dull", "Matte"],
+    "exampleSentences": ["The gleaming sword hung on the wall."]
   }
 ]
-
-

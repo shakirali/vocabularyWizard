@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 final class FlashcardSessionViewModel: ObservableObject {
@@ -63,5 +62,3 @@ final class FlashcardSessionViewModel: ObservableObject {
         progressStore.markWordMastered(item.id, year: year)
     }
 }
-
-

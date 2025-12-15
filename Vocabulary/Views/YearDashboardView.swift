@@ -194,5 +194,3 @@ private struct DashboardModeCard: View {
         )
     }
 }
-
-

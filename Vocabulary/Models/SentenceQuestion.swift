@@ -17,5 +17,3 @@ struct SentenceQuestion: Identifiable, Hashable {
         sentenceTemplate.replacingOccurrences(of: "{word}", with: "_____")
     }
 }
-
-

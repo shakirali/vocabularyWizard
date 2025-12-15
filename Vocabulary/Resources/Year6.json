@@ -12,7 +12,33 @@
     "meaning": "Able to withstand or recover quickly from difficult conditions.",
     "antonyms": ["Fragile", "Vulnerable"],
     "exampleSentences": ["The resilient team kept trying after each setback."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000033",
+    "word": "Ambiguous",
+    "meaning": "Open to more than one interpretation; not clear.",
+    "antonyms": ["Clear", "Definite"],
+    "exampleSentences": ["The ambiguous instructions confused everyone."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000034",
+    "word": "Compelling",
+    "meaning": "Evoking interest or attention in a powerful way.",
+    "antonyms": ["Boring", "Uninteresting"],
+    "exampleSentences": ["She told a compelling story about her adventures."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000035",
+    "word": "Elusive",
+    "meaning": "Difficult to find, catch, or achieve.",
+    "antonyms": ["Accessible", "Attainable"],
+    "exampleSentences": ["The elusive butterfly flew away before I could catch it."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000036",
+    "word": "Profound",
+    "meaning": "Very great or intense; having deep meaning.",
+    "antonyms": ["Shallow", "Superficial"],
+    "exampleSentences": ["The book had a profound effect on how she saw the world."]
   }
 ]
-
-

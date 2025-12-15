@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 final class QuizViewModel: ObservableObject {
@@ -87,5 +86,3 @@ final class QuizViewModel: ObservableObject {
         return questions
     }
 }
-
-

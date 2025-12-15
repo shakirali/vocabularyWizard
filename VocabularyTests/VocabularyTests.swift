@@ -51,7 +51,7 @@ final class VocabularyTests: XCTestCase {
 
 // Mirror of raw JSON structure used in LocalJSONVocabularyRepository
 private struct TestRawVocabularyItem: Codable {
-    let id: String
+    let id: UUID?
     let word: String
     let meaning: String
     let antonyms: [String]

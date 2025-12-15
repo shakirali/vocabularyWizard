@@ -10,6 +10,7 @@ import SwiftUI
 struct SentenceFillView: View {
     @StateObject private var viewModel: SentenceFillViewModel
     @State private var feedback: String?
+    @State private var isProcessingAnswer = false
 
     init(
         year: YearGroup,
@@ -54,6 +55,19 @@ struct SentenceFillView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                     Spacer()
+                } else if viewModel.isFinished {
+                    Spacer()
+                    VStack(spacing: 8) {
+                        Text("Great work!")
+                            .font(.system(size: 24, weight: .bold))
+                        Text("Score: \(viewModel.correctCount)/\(viewModel.questions.count)")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(Color(red: 0.17, green: 0.68, blue: 0.93))
+                        Text("You've completed all sentences.")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
                 } else if let question = viewModel.currentQuestion {
                     ScrollView {
                         VStack(spacing: 24) {
@@ -96,6 +110,7 @@ struct SentenceFillView: View {
                                         )
                                     }
                                     .buttonStyle(.plain)
+                                    .disabled(isProcessingAnswer)
                                 }
                             }
                             .padding(.horizontal)
@@ -110,17 +125,6 @@ struct SentenceFillView: View {
                         }
                         .padding(.vertical, 16)
                     }
-
-                    if viewModel.isFinished {
-                        VStack(spacing: 6) {
-                            Text("Great work!")
-                                .font(.system(size: 20, weight: .bold))
-                            Text("You've completed all sentences.")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.secondary)
-                        }
-                        .padding(.bottom, 16)
-                    }
                 }
             }
         }
@@ -133,12 +137,17 @@ struct SentenceFillView: View {
         let selected = question.options[index]
         if selected == question.correctWord {
             feedback = "Nice! \"\(selected)\" fits perfectly."
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            viewModel.answer(isCorrect: true)
+            isProcessingAnswer = true
+            Task {
+                try? await Task.sleep(for: .milliseconds(800))
                 feedback = nil
+                isProcessingAnswer = false
                 viewModel.advance()
             }
         } else {
             feedback = "Try again. Think about what word best completes the sentence."
+            viewModel.answer(isCorrect: false)
         }
     }
 }

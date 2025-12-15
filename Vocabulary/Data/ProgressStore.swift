@@ -41,5 +41,3 @@ final class UserDefaultsProgressStore: ProgressStore {
         keyPrefix + year.shortCode
     }
 }
-
-

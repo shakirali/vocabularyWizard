@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 final class YearSelectionViewModel: ObservableObject {
@@ -16,5 +15,3 @@ final class YearSelectionViewModel: ObservableObject {
         years = repository.getYears()
     }
 }
-
-

@@ -12,7 +12,33 @@
     "meaning": "Of very great extent or quantity; immense.",
     "antonyms": ["Tiny", "Limited"],
     "exampleSentences": ["They looked over the vast ocean."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000023",
+    "word": "Peculiar",
+    "meaning": "Strange or unusual; different from what is normal.",
+    "antonyms": ["Ordinary", "Common"],
+    "exampleSentences": ["There was a peculiar smell coming from the kitchen."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000024",
+    "word": "Abundant",
+    "meaning": "Existing or available in large quantities; plentiful.",
+    "antonyms": ["Scarce", "Rare"],
+    "exampleSentences": ["The garden had abundant flowers in spring."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000025",
+    "word": "Cautious",
+    "meaning": "Careful to avoid potential problems or dangers.",
+    "antonyms": ["Reckless", "Careless"],
+    "exampleSentences": ["The cautious driver slowed down at the corner."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000026",
+    "word": "Diligent",
+    "meaning": "Having or showing care and effort in one's work.",
+    "antonyms": ["Lazy", "Careless"],
+    "exampleSentences": ["The diligent student finished all her homework early."]
   }
 ]
-
-

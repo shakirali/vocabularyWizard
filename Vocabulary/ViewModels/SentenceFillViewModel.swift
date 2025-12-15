@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 final class SentenceFillViewModel: ObservableObject {
     @Published private(set) var questions: [SentenceQuestion] = []
     @Published private(set) var currentIndex: Int = 0
+    @Published private(set) var correctCount: Int = 0
     @Published private(set) var isFinished: Bool = false
 
     private let repository: VocabularyRepository
@@ -33,11 +33,19 @@ final class SentenceFillViewModel: ObservableObject {
     func load() async {
         isFinished = false
         currentIndex = 0
+        correctCount = 0
         do {
             let items = try await repository.getWords(for: year)
             questions = makeQuestions(from: items)
         } catch {
             questions = []
+        }
+    }
+
+    func answer(isCorrect: Bool) {
+        guard !isFinished else { return }
+        if isCorrect {
+            correctCount += 1
         }
     }
 
@@ -59,11 +67,17 @@ final class SentenceFillViewModel: ObservableObject {
         let shuffled = candidates.shuffled()
         for item in shuffled {
             guard let sentence = item.exampleSentences.first else { continue }
-            let template = sentence.replacingOccurrences(of: item.word, with: "{word}")
+            // Use case-insensitive replacement to handle capitalization differences
+            let template = sentence.replacingOccurrences(
+                of: item.word,
+                with: "{word}",
+                options: .caseInsensitive
+            )
             var distractors = shuffled.filter { $0.id != item.id }.map(\.word).shuffled()
             distractors = Array(distractors.prefix(3))
             var options = distractors
-            if options.count < 3 {
+            // Allow questions with fewer distractors if not enough words available
+            if options.isEmpty {
                 continue
             }
             let correctIndex = Int.random(in: 0...options.count)

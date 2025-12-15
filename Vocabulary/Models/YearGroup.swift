@@ -26,5 +26,3 @@ enum YearGroup: String, CaseIterable, Identifiable, Codable {
         }
     }
 }
-
-

@@ -31,5 +31,3 @@ struct VocabularyItem: Identifiable, Codable, Hashable {
         self.exampleSentences = exampleSentences
     }
 }
-
-

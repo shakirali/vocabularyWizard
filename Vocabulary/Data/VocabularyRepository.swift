@@ -11,5 +11,3 @@ protocol VocabularyRepository {
     func getYears() -> [YearGroup]
     func getWords(for year: YearGroup) async throws -> [VocabularyItem]
 }
-
-

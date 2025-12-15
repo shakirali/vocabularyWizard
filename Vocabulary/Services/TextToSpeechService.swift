@@ -22,5 +22,3 @@ final class DefaultTextToSpeechService: NSObject, TextToSpeechService {
         synthesizer.speak(utterance)
     }
 }
-
-

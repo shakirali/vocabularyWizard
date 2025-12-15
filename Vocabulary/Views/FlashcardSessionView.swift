@@ -83,5 +83,3 @@ struct FlashcardSessionView: View {
         }
     }
 }
-
-

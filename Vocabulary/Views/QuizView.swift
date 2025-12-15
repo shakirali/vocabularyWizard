@@ -139,5 +139,3 @@ struct QuizView: View {
         }
     }
 }
-
-

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct YearSelectionView: View {
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel: YearSelectionViewModel
     private let repository: VocabularyRepository
     private let progressStore: ProgressStore
@@ -34,12 +35,8 @@ struct YearSelectionView: View {
             VStack(spacing: 0) {
                 // Top bar: simple back & skip layout
                 HStack {
-                    NavigationLink {
-                        WelcomeView(
-                            repository: repository,
-                            progressStore: progressStore,
-                            tts: tts
-                        )
+                    Button {
+                        dismiss()
                     } label: {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 20, weight: .semibold))
@@ -185,6 +182,3 @@ private extension YearSelectionView {
         }
     }
 }
-
-
-
