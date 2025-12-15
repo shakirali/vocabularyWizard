@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "8C0AEC7D-5CD7-4FC5-A29D-A17A365D512A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Vocabulary.xcodeproj",
+      "identifier" : "0528BA5E2EF02BD400B9143C",
+      "name" : "Vocabulary"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Vocabulary.xcodeproj",
+        "identifier" : "0528BA6B2EF02BD500B9143C",
+        "name" : "VocabularyTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Vocabulary.xcodeproj",
+        "identifier" : "0528BA752EF02BD500B9143C",
+        "name" : "VocabularyUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

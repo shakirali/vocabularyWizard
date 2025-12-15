@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct VocabularyApp: App {
+    private let repository = LocalJSONVocabularyRepository()
+    private let progressStore = UserDefaultsProgressStore()
+    private let ttsService = DefaultTextToSpeechService()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                WelcomeView(
+                    repository: repository,
+                    progressStore: progressStore,
+                    tts: ttsService
+                )
+            }
         }
     }
 }

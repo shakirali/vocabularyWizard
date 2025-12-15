@@ -1,0 +1,18 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000011",
+    "word": "Curious",
+    "meaning": "Eager to know or learn something.",
+    "antonyms": ["Uninterested", "Indifferent"],
+    "exampleSentences": ["The curious boy asked many questions."]
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000012",
+    "word": "Rapid",
+    "meaning": "Happening in a short time or at a great rate.",
+    "antonyms": ["Slow", "Gradual"],
+    "exampleSentences": ["There was a rapid change in the weather."]
+  }
+]
+
+
