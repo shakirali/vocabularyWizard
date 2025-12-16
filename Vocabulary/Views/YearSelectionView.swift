@@ -53,7 +53,7 @@ struct YearSelectionView: View {
                     Spacer()
 
                     Button {
-                        // No-op for now – could later skip to most recent year.
+                        // Future: Skip to most recent year
                     } label: {
                         Text("Skip")
                             .font(.system(size: 13, weight: .bold))
@@ -128,7 +128,7 @@ struct YearSelectionView: View {
                             .font(.system(size: 13, weight: .medium))
                             .foregroundColor(.secondary)
                         Button {
-                            // Placeholder; no dedicated flow yet.
+                            // Future: Navigate to parent help flow
                         } label: {
                             Text("Ask a parent!")
                                 .font(.system(size: 13, weight: .semibold))

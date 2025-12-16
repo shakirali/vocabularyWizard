@@ -20,16 +20,20 @@ struct FlashcardView: View {
             cardFront
                 .opacity(isFlipped ? 0 : 1)
                 .rotation3DEffect(.degrees(isFlipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
+                .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.2), value: isFlipped)
+                .allowsHitTesting(!isFlipped)
 
             // Back side (pre-rotated so it appears correct when card is flipped)
             cardBack
                 .opacity(isFlipped ? 1 : 0)
                 .rotation3DEffect(.degrees(isFlipped ? 0 : -180), axis: (x: 0, y: 1, z: 0))
+                .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.2), value: isFlipped)
+                .allowsHitTesting(isFlipped)
         }
         .frame(maxWidth: 420, maxHeight: 360)
+        .contentShape(Rectangle())
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("flashcard-\(item.id)")
-        .animation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.2), value: isFlipped)
         .onTapGesture {
             isFlipped.toggle()
         }
@@ -42,9 +46,11 @@ struct FlashcardView: View {
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .fill(Color(.systemBackground))
                 .shadow(color: Color.black.opacity(0.15), radius: 16, x: 0, y: 10)
+                .allowsHitTesting(false) // Let taps pass through to container
 
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .strokeBorder(Color.secondary.opacity(0.15), lineWidth: 1)
+                .allowsHitTesting(false) // Let taps pass through
 
             VStack(spacing: 20) {
                 VStack(spacing: 16) {
@@ -53,6 +59,7 @@ struct FlashcardView: View {
                         .foregroundColor(Color(.label))
                         .multilineTextAlignment(.center)
                         .accessibilityIdentifier("flashcard-word")
+                        .allowsHitTesting(false) // Let taps pass through
 
                     Button {
                         tts.speak(word: item.word)
@@ -71,12 +78,15 @@ struct FlashcardView: View {
                                 .fill(Color(red: 0.17, green: 0.68, blue: 0.93).opacity(0.12))
                         )
                     }
+                    .buttonStyle(.plain)
+                    .allowsHitTesting(true) // Re-enable for button
                 }
 
                 Text("Tap card to flip")
                     .font(.system(size: 13, weight: .medium))
                     .foregroundColor(.secondary)
                     .padding(.top, 4)
+                    .allowsHitTesting(false) // Let taps pass through
             }
             .padding(24)
         }
@@ -89,9 +99,11 @@ struct FlashcardView: View {
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .fill(Color(red: 0.17, green: 0.68, blue: 0.93))
                 .shadow(color: Color.black.opacity(0.15), radius: 16, x: 0, y: 10)
+                .allowsHitTesting(false) // Let taps pass through to container
 
             RoundedRectangle(cornerRadius: 24, style: .continuous)
                 .strokeBorder(Color.white.opacity(0.6), lineWidth: 1)
+                .allowsHitTesting(false) // Let taps pass through
 
             VStack(spacing: 20) {
                 VStack(spacing: 10) {
@@ -99,16 +111,19 @@ struct FlashcardView: View {
                         .font(.system(size: 22, weight: .bold))
                         .foregroundColor(.white)
                         .accessibilityIdentifier("flashcard-word-back")
+                        .allowsHitTesting(false) // Let taps pass through
 
                     Capsule()
                         .fill(Color.white.opacity(0.35))
                         .frame(width: 80, height: 3)
+                        .allowsHitTesting(false) // Let taps pass through
 
                     Text(item.meaning)
                         .font(.system(size: 17, weight: .medium))
                         .foregroundColor(.white.opacity(0.95))
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 12)
+                        .allowsHitTesting(false) // Let taps pass through
                 }
 
                 if let first = item.antonyms.first,
@@ -121,6 +136,7 @@ struct FlashcardView: View {
                                 .font(.system(size: 13, weight: .bold))
                         }
                         .foregroundColor(.white.opacity(0.9))
+                        .allowsHitTesting(false) // Let taps pass through
 
                         HStack(spacing: 10) {
                             Text(first)
@@ -132,6 +148,7 @@ struct FlashcardView: View {
                                     Capsule()
                                         .fill(Color.white)
                                 )
+                                .allowsHitTesting(false) // Let taps pass through
 
                             Text(second)
                                 .font(.system(size: 15, weight: .bold))
@@ -142,10 +159,12 @@ struct FlashcardView: View {
                                     Capsule()
                                         .fill(Color.white)
                                 )
+                                .allowsHitTesting(false) // Let taps pass through
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 16)
+                    .allowsHitTesting(false) // Let taps pass through
                 }
 
                 Button {
@@ -165,6 +184,8 @@ struct FlashcardView: View {
                             .fill(Color.white)
                     )
                 }
+                .buttonStyle(.plain)
+                .allowsHitTesting(true) // Re-enable for button
                 .padding(.top, 4)
             }
             .padding(24)
@@ -182,4 +203,3 @@ struct FlashcardView: View {
     )
     FlashcardView(item: item, tts: DefaultTextToSpeechService())
 }
-

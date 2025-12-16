@@ -45,12 +45,12 @@ struct WelcomeView: View {
                 HStack {
                     Spacer()
                     Button {
-                        // Placeholder – can later navigate to a parents/guide screen
+                        // Future: Navigate to parents/guide screen
                     } label: {
                         HStack(spacing: 8) {
                             Image(systemName: "lock.fill")
                                 .font(.system(size: 16, weight: .semibold))
-                                .foregroundColor(.gray)
+                            .foregroundColor(.gray)
                             Text("Parents")
                                 .font(.system(size: 13, weight: .bold))
                                 .foregroundColor(.secondary)
@@ -172,7 +172,7 @@ struct WelcomeView: View {
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(.secondary)
                     Button {
-                        // Placeholder; no auth in this app yet.
+                        // Future: Implement authentication
                     } label: {
                         Text("Sign In")
                             .font(.system(size: 13, weight: .bold))
